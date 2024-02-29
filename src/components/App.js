@@ -1,20 +1,17 @@
 import React from "react";
-import "./../styles/App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import UserDetails from "./UserDetails";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UserList from "./UserList";
+import UserDetails from "./UserDetails";
 
-const App = () => {
+function App() {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<UserList />} />
-          <Route path="/users/:id" element={<UserDetails />} />
-        </Routes>
-      </BrowserRouter>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<UserList />} />
+        <Route path="/users/:id" element={<UserDetails />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
