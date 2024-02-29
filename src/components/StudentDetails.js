@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function UserDetails() {
-  const { id } = useParams();
+const StudentDetails = () => {
   const [user, setUser] = useState(null);
-
+  const { id } = useParams();
   useEffect(() => {
     async function fetchUser() {
       const response = await fetch(
@@ -17,11 +16,7 @@ function UserDetails() {
     fetchUser();
   }, [id]);
 
-  if (!user) {
-    return <div>Loading...</div>;
-  }
-
-  return (
+  return user ? (
     <div>
       <h1>User Details</h1>
       <p>
@@ -40,7 +35,8 @@ function UserDetails() {
         <strong>Website:</strong> {user.website}
       </p>
     </div>
+  ) : (
+    <div>Loading...</div>
   );
-}
-
-export default UserDetails;
+};
+export default StudentDetails;

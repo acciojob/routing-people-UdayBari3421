@@ -1,17 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import UserList from "./UserList";
-import UserDetails from "./UserDetails";
+import "./../styles/App.css";
+import StudentList from "./StudentList";
+import { Route, Routes } from "react-router-dom";
+import StudentDetails from "./StudentDetails";
 
-function App() {
+const App = () => {
   return (
-    <Router>
+    <div>
       <Routes>
-        <Route path="/" element={<UserList />} />
-        <Route path="/users/:id" element={<UserDetails />} />
+        <Route path="/" element={<StudentList />} />
+        <Route path="/users/:id" element={<StudentDetails />} />
       </Routes>
-    </Router>
+    </div>
   );
-}
+};
 
 export default App;
