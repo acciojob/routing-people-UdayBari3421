@@ -16,10 +16,6 @@ const StudentDetails = () => {
     fetchUser();
   }, [id]);
 
-  if (!user) {
-    return <div>Loading...</div>;
-  }
-
   return user ? (
     <div>
       <h1>User Details</h1>
